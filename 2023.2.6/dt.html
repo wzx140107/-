@@ -1,0 +1,57 @@
+<!doctype html>
+<link rel="apple-touch-icon" sizes="180x180" href="/pic/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/pic/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/pic/logo.png">
+<link rel="mask-icon" href="/pic/logo.png" color="#5bbad5">
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>梓祥大帝国疆域全图</title>
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=e48b93d2f65651719016e4f3e1b440c1"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+<div id="container"></div>
+
+<script>
+    var map = new AMap.Map('container', {
+        resizeEnable: true,
+        zoom:11,
+        
+        mapStyle:'amap://styles/ebb59e7fa62bd793997ff88bcd4f5fc3'
+        //前往创建自定义地图样式：https://lbs.amap.com/dev/mapstyle/index
+    });
+
+</script>
+
+
+<div class="pio-container right" >
+    <div class="pio-action"></div>
+    <canvas id="pio" width="200" height="250" ></canvas>
+	
+</div>
+<link rel="stylesheet" href="/lty/piofordt.css">
+
+<script src="/lty/piofordt.js"></script>
+<script src="/lty/l2d.js"></script>
+<script>
+    var pio = new Paul_Pio({
+    "mode": "fixed",
+    "tips": true,
+    "hidden": true,
+    "content": {
+        "welcome": ["(｡･∀･)ﾉﾞ嗨！"],
+    },
+    "model": [
+	"/lty/model.json"
+    //"https://unpkg.com/lty-live2d@1.2.0/live2d/model/tianyi/model.json", //洛天依
+
+    ]
+});
+</script>
+</body>
+</html>

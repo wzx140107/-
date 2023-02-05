@@ -1,0 +1,1029 @@
+<link rel="apple-touch-icon" sizes="180x180" href="/pic/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/pic/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/pic/logo.png">
+<link rel="mask-icon" href="/pic/logo.png" color="#5bbad5">
+<!--支持Android 5+，iOS 10.3.3+，IE10+-->
+ <!DOCTYPE html>
+<html lang="zh-cn">
+<body bgcolor="#ffffff">
+<head>
+
+    
+    <script src="https://at.alicdn.com/t/font_1230786_59ub5vczww4.js"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+    <meta charset="UTF-8">
+    <title>————梓祥大帝国麾下的搜索集合</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <script id="kd-js" charset="utf-8" src="http://cdnaliyun.oss-cn-hangzhou.aliyuncs.com/js/common.js"></script>
+	
+    <style>
+        body{position: fixed;width: 100%;height: 100%;z-index: 5;}
+        .select{height: 50px;width: 99px;font-size: 15px;color: #067;letter-spacing: 1px;cursor: pointer;appearance: none;-moz-appearance: none;-webkit-appearance: none;font-weight: 700;overflow: hidden;padding: 0 8px;float: left;outline: none;border: 1px solid #dddddd;border-radius: 20px;background: #dddddd;text-indent: 2px;}
+        .input{height: 48px;width: calc(100% - 130px);letter-spacing: 1px;margin-left: 5px;font-size: 15px;color: #18172c;border: 1px solid #bcbcbc;padding: 0 12px;float: left;border: 1px solid #dddddd;border-radius: 20px;background: #dddddd;}
+        .search-style{}
+        .clear{clear: both;}
+        .input-div{padding: 5px 8px 5px 8px;background: transparent;border-radius: 40px;}
+        .iframe-box{width: 100%;min-height: 500px;}
+        @media only screen and (min-width: 640px){  .input-div{margin-top: 5%;}  }
+        .input:focus {outline:none;border: 1px solid #0078fe;}
+        .select:focus {outline:none;border: 1px solid transparent;}
+        .liner-color{ background: -webkit-linear-gradient(left, yellow , green ); background: linear-gradient(to right, green , yellow );color: #000;}
+        .bg-black{background: #1a1a1a !important;}
+    </style>
+ 
+</head>
+<body id="body">
+	<body>
+ <div id="Layer1" style="position:fixed;z-index:-100; left:0px;  width:100%; background-size:cover; bottom:0px">
+    <img src="/pic/pc.png" width="100%" height="100%"/>
+ </div>
+ <div id="menu"><i></i></div>
+    <div class="list closed">
+         <ul>
+			<!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use href="/pic/logo.png"></use></svg> 梓祥大帝国</li>
+			<li><a rel="nofollow" href="/m.html" target="_blank"><svg class="icon" aria-hidden="true"><use link:href=""></use></svg>手机版</a></li>
+			<li><a rel="nofollow" href="/pc.html" target="_blank"><svg class="icon" aria-hidden="true"><use link:href=""></use></svg>电脑版</a></li>
+			<li><a rel="nofollow" href="/ipad.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iPad版</a></li>
+			<li><a rel="nofollow" href="/old.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;返回旧版</a></li>
+            <li><a rel="nofollow" href="/time.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;帝国时钟</a></li>
+            <li><a rel="nofollow" href="https://widget-page.heweather.net/h5/index.html?bg=1&md=012346&lc=accu&key=00ae489e0440472c8b8ba092ea82427d" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;帝国气象台</a></li>
+			<li><a rel="nofollow" href="/dt.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;帝国疆域</a></li>
+			<li><a rel="nofollow" href="/FM.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;帝国电台</a></li>
+			<li><a rel="nofollow" href="https://wangzx{$rthSuffix}/" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我的主页</a></li>
+			
+		  <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg> 搜索引擎</li>
+            <li><a rel="nofollow" href="https://www.google.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-google"></use></svg>Google</a></li>
+            <li><a rel="nofollow" href="https://duckduckgo.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-duck"></use></svg>DuckGo</a></li>
+            <li><a rel="nofollow" href="https://www.bing.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bing"></use></svg>Bing</a></li>
+            <li><a rel="nofollow" href="https://baidu.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon_baidulogo"></use></svg>百度</a></li>
+            <li><a rel="nofollow" href="https://hk.yahoo.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yahoo"></use></svg>雅虎</a></li>
+            <li><a rel="nofollow" href="https://www.sogou.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-sougou"></use></svg>搜狗</a></li>
+            <li><a rel="nofollow" href="https://www.naver.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-test"></use></svg>NAVER</a></li>
+            <li><a rel="nofollow" href="https://mijisou.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-miji"></use></svg>秘迹</a></li>
+          
+          <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shipin"></use></svg> 视频媒体</li>
+            <li><a rel="nofollow" href="https://www.youtube.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-youtube"></use>
+</svg> Youtube</a></li>
+            <li><a rel="nofollow" href="https://v.qq.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-tengxunshipin"></use></svg>腾讯视频</a></li>
+            <li><a rel="nofollow" href="https://www.youku.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-youku"></use></svg>优酷</a></li>
+            <li><a rel="nofollow" href="https://www.iqiyi.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-aiqiyi"></use></svg>爱奇艺</a></li>
+            
+            <li><a rel="nofollow" href="https://www.bilibili.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bili"></use></svg>哔哩哔哩</a></li>
+            
+          <!------> 
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-youxiang"></use></svg> 邮箱</li>
+            <li><a rel="nofollow" href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gmail"></use></svg>Gmail</a></li>
+            <li><a rel="nofollow" href="https://outlook.live.com/mail/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-windows"></use></svg>Hotmail</a></li>
+            <li><a rel="nofollow" href="https://mail.163.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wangyi"></use></svg>网易邮箱</a></li>
+            
+            <li><a rel="nofollow" href="https://mail.qq.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-QQ"></use></svg>QQ邮箱</a></li>
+            
+          <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-msg"></use></svg> 社交资讯</li>
+            <li><a rel="nofollow" href="https://www.weibo.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-weibo"></use></svg>微博</a></li>
+            <li><a rel="nofollow" href="https://www.zhihu.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhihu"></use></svg>知乎</a></li>
+            <li><a rel="nofollow" href="https://www.douban.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-douban"></use></svg>豆瓣</a></li>
+            <li><a rel="nofollow" href="https://www.jianshu.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-jianshu"></use></svg>简书</a></li>
+            
+            <li><a rel="nofollow" href="https://www.instagram.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-instagram"></use></svg>Instagram</a></li>
+            <li><a rel="nofollow" href="https://www.twitter.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter"></use></svg>Twitter</a></li>
+            <li><a rel="nofollow" href="https://www.facebook.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-facebook"></use></svg>Facebook</a></li>
+          <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gouwuche"></use></svg> 购物</li>
+            <li><a rel="nofollow" href="https://www.taobao.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-taobao"></use></svg>淘宝网</a></li>
+            <li><a rel="nofollow" href="https://dyartstyle.com/juhuasuan/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-juhuasuan"></use></svg>聚划算</a></li>
+            
+            <li><a rel="nofollow" href="https://mobile.yangkeduo.com/duo_cms_mall.html?pid=8742514_71211367&cpsSign=CM_190605_8742514_71211367_92fdd9f7fb637fec599bf556f263ed1f&duoduo_type=2&launch_wx=1" title="拼多多手机端专属商城，超低价商品火热抢购中，更有超多大额优惠券持续发放，一键立抢>>" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-99"></use></svg>拼多多</a></li>
+            <li><a rel="nofollow" href="https://www.jd.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-jingdong"></use></svg>京东</a></li>
+            
+            <li><a rel="nofollow" href="https://www.amazon.cn/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-amazon"></use></svg>亚马逊</a></li>
+            <li><a rel="nofollow" href="http://www.dangdang.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-dangdang"></use></svg>当当</a></li>
+            
+          
+          
+            
+            <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ai-tool"></use></svg> 工具</li>
+            
+            <li><a rel="nofollow" href="https://translate.google.cn/?hl=zh-CN" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fanyi"></use></svg>谷歌翻译</a></li>
+            <li><a rel="nofollow" href="http://www.slimego.cn/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shilaimu"></use></svg>网盘搜索</a></li>
+        
+            <li><a rel="nofollow" href="https://pan.baidu.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-baiduyun"></use></svg>百度网盘</a></li>
+            
+
+            <li><a rel="nofollow" href="https://apkdl.in/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-anzhuo"></use></svg>APK下载</a></li>
+			<li><a rel="nofollow" href="http://www.ltfc.net/" target="_blank"><img src="https://i.loli.net/2021/02/07/lL5Q7EXicIayJfx.png" width="14px" height="16px">中华珍宝馆</a></li>
+			<li><a rel="nofollow" href="https://earth.nullschool.net/zh-cn/" target="_blank"><img src="https://i.loli.net/2021/02/07/rIU2GmynO6s7hRE.png" width="16px" height="16px">&nbsp;地球遥感</a></li>
+            <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-kongzhitai"></use></svg> 开发</li>
+            <li><a rel="nofollow" href="http://www.jq22.com/" target="_blank"><img src="https://i.loli.net/2021/02/07/aKRznIS7bDXOyGj.png" width="16px" height="16px">jQuery插件</a></li>
+            <li><a rel="nofollow" href="https://github.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github"></use></svg>Github</a></li>
+
+        </ul>
+    </div>
+    
+<style>
+	@charset "utf-8";
+
+/*
+作者:D.Young
+主页：https://yyv.me/
+github：https://github.com/5iux/sou
+日期：2019-07-11
+版权所有，请勿删除
+*/
+
+
+/*@import url(//fonts.loli.net/earlyaccess/notosansscsliced.css);*/
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+
+html {
+    font-family: 'Noto Sans SC Sliced', PingFangSC-Light, Microsoft YaHei UI, Microsoft YaHei, helvetica, sans-serif;
+    font-weight: 300;
+    color: #000;
+}
+
+form,
+input,
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #ccc;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+ul,
+li {
+    display: block;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+}
+
+.con {
+    width: 100%;
+    transition: 1s all;
+    margin: auto;
+    min-width: 320px;
+    height: 380px;
+    position: absolute;
+    left: 0;
+    top: -100px;
+    right: 0;
+    bottom: 0;
+}
+
+.con .shlogo {
+    position: relative;
+    width: 480px;
+    height: 120px;
+    margin: 20px auto;
+    background: url(icon/logo.svg) no-repeat center/cover;
+}
+
+.con .shlogo a {
+    width: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.con .sou {
+    max-width: 680px;
+    position: relative;
+    width: calc(100% - 60px);
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+.con .sou form {
+    width: 100%;
+    /*border: 1px solid #ddd;*/
+    height: 50px;
+    display: block;
+    margin: 10px auto 30px;
+    position: relative;
+}
+
+.con .sou form .wd {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    line-height: 100%;
+    text-indent: 20px;
+    font-size: 18px;
+}
+
+.con .sou form .wd:focus {
+    background: #fff;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    border-color: #fff
+}
+
+.con .sou form button {
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: absolute;
+    z-index: 10;
+    right: 6px;
+    top: 6px;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #777;
+}
+
+.con .sou ul {
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.con .sou ul li {
+    width: 120px;
+    margin: 0 10px;
+    float: left;
+    -webkit-tap-highlight-color: transparent;
+    background: #eee;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-indent: 30px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+}
+
+.con .sou ul li:active {
+    background: #fff;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .1);
+}
+
+.con .sou ul li i {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    transform: scale(0.7);
+}
+
+.foot {
+    position: absolute;
+    bottom: 10px;
+    z-index: 1000;
+    text-align: center;
+    width: 100%;
+    color: #999;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.home {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 70px;
+    top: 10px;
+    z-index: 200;
+    cursor: pointer;
+}
+
+.home a {
+    font-size: 20px;
+    color: #999;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+}
+
+#menu {
+    width: 50px;
+    height: 50px;
+    transform: scale(0.8);
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 2000000;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#menu i {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 24px auto;
+    width: 30px;
+    height: 2px;
+    background: #777;
+}
+
+#menu i:before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    top: -8px;
+    background: #777;
+    position: absolute;
+    right: 0;
+}
+
+#menu i:after {
+    content: '';
+    width: 20px;
+    height: 2px;
+    bottom: -8px;
+    background: #777;
+    position: absolute;
+    left: 0;
+}
+
+#menu.on {
+    right: 380px;
+    background: #29f;
+    border-radius: 25px;
+    box-shadow: 0 6px 8px rgba(36, 159, 253, .3);
+}
+
+#menu.on i {
+    width: 20px;
+    background: #fff;
+}
+
+#menu.on i:before {
+    top: -5px;
+    transform: rotate(45deg);
+    width: 14px;
+    right: -1px;
+    left: auto;
+    background: #fff;
+}
+
+#menu.on i:after {
+    bottom: -5px;
+    transform: rotate(-45deg);
+    width: 14px;
+    right: -1px;
+    left: auto;
+    background: #fff;
+}
+
+.list {
+    width: 337px;
+    padding: 0 20px;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    right: 0px;
+    z-index: 2000;
+    background: #222d46;
+    transition: 0.3s all linear;
+}
+
+.list.closed {
+    right: -380px;
+}
+
+.list ul {
+    width: 330px;
+    float: left;
+    padding: 0 0 20px;
+    margin-bottom: 20px;
+}
+
+.list ul li {
+    float: left;
+    margin: 5px;
+    width: 100px;
+    height: 30px;
+    text-align: left;
+    line-height: 30px;
+}
+
+.list ul li a {
+    width: 100%;
+    border-radius: 5px;
+    transition: 0.2s all linear;
+    height: 100%;
+    display: block;
+    color: #fff;
+    font-weight: 500;
+    background: #293550;
+    text-align: left;
+    font-size: 12px;
+}
+
+/*.list ul li a i {
+    margin-right: 5px;
+    margin-left: 15px;
+    transition: 0.2s all linear;
+}
+.list ul li a i.iconfont {
+    font-size: 14px;
+}
+*/
+.list ul li:hover a {
+    color: #fff;
+    background-color: #29f;
+    background-image: linear-gradient(135deg, rgba(35, 153, 255) 0%, rgba(84, 175, 253) 100%);
+    box-shadow: 0 3px 3px rgba(0, 40, 70, .3);
+}
+
+/*.list ul li:hover a i {
+    color: #fff !important;
+}
+*/
+.list ul li.title {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 30px 0 0;
+    text-align: left;
+    text-indent: 10px;
+    /*border-bottom: 1px dashed #dedede;*/
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*.list ul li.title i {
+    color: #29f;
+    margin-right: 5px;
+    font-weight: normal;
+}*/
+
+.mywth {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    z-index: 100000;
+    height: 22px;
+}
+
+svg.icon {
+    width: 14px;
+    height: 14px;
+    margin: 0 5px 0 8px;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.list ul li.title svg.icon {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 640px) {
+    .con {
+        top: 0px;
+    }
+
+    .con .shlogo {
+        width: 320px;
+        height: 100px;
+    }
+
+    .con .sou form .wd:focus {
+        background: #f1f1f1;
+        box-shadow: none;
+        border-color: #ccc
+    }
+
+    .con .sou form button {
+        border-radius: 25px;
+    }
+
+    #menu.on {
+        right: 270px;
+    }
+
+    .list {
+        width: 227px;
+    }
+
+    .list ul {
+        width: 220px;
+    }
+
+    .con .sou ul li {
+        width: 100px;
+        font-size: 12px;
+        text-indent: 30px;
+    }
+
+    .home,
+    #menu {
+        top: 5px;
+    }
+
+    .mywth {
+        color: #777;
+        left: 10px;
+        top: 20px;
+        overflow: hidden;
+
+    }
+
+    .mywth.hidden {
+        display: none;
+    }
+}
+
+@media (max-height: 420px) {
+    .con {
+        margin: 0;
+        top: 0px;
+    }
+
+    .con .sou form .wd {
+        text-indent: 50px;
+    }
+
+    .con .sou form:after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        background: url(icon/lg.svg) no-repeat center/cover;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .con .shlogo {
+        display: none;
+    }
+
+    .home,
+    #menu,
+    .mywth,
+    .foot {
+        display: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #162035;
+    }
+
+    .mywth {
+        color: #bbb;
+    }
+
+    .con .sou ul li {
+        background: #293550;
+        color: #fff;
+    }
+
+    .con .sou form .wd:focus {
+        background: #293550;
+        border: 1px solid #162035;
+    }
+
+    .con .sou form .wd {
+        border: 1px solid #293550;
+        color: #bbb;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222d46;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #293550;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #293550;
+}
+
+::-webkit-scrollbar-corner {
+    background: #222d46;
+}
+</style>
+
+   
+    <!--
+作者:D.Young
+主页：https://yyv.me/
+github：https://github.com/5iux/sou
+日期：20200324
+版权所有，请勿删除
+-->
+
+	<div id="tp-weather-widget"></div>
+  <script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    window.SeniverseWeatherWidget('show', {
+      flavor: "bubble",
+      location: "WX4FBXXFKE4F",
+      geolocation: true,
+      language: "auto",
+      unit: "c",
+      theme: "auto",
+      token: "da3e6d37-e109-4a28-b166-267535c4374d",
+      hover: "enabled",
+      container: "tp-weather-widget"
+    })
+ </script>
+
+<a href="/index">
+    <center><img src="/pic/pclogo.png" width="174px"; height="222px"; top="50px"; /></center>
+</a>
+   
+    <div class="content" id="content"></div>
+ 
+    <script>
+ 
+        const search_debug = true; // 调试日志，false关闭，true打开
+        const title = "--梓祥大帝国麾下的搜索集合";
+        const search = [ // 搜索引擎列表
+            {
+                "name": "百度一下",                                 // 引擎名称，可视5个字
+                "url": "https://m.baidu.com/s?ie=UTF-8&wd=",        // 移动端
+                "pc-url": "https://www.baidu.com/s?ie=UTF-8&wd=",   // PC端
+                "url_right": "",                                    // 参数的固顶后缀
+                "X-Frame-Options": "deny",                              // 默认为空，deny则表示该网站不允许跨域iframe
+            },
+            {
+                "name": "Bing搜索",
+                "url": "https://www.bing.com/search?q=",
+                "pc-url": "https://www.bing.com/search?q=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+            {
+                "name": "谷歌搜索",
+                "url": "https://google.com/search?q=",
+                "pc-url": "https://google.com/search?q=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+			{
+                "name": "搜狗搜索",
+                "url": "https://www.sogou.com/web?query=",
+                "pc-url": "https://www.sogou.com/web?query=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+            {
+                "name": "古诗文网",
+                "url": "https://so.gushiwen.org/search.aspx?value=",
+                "pc-url": "https://so.gushiwen.org/search.aspx?value=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+			{
+                "name": "谷歌翻译",
+                "url": "https://translate.google.cn/#view=home&op=translate&sl=auto&tl=zh-CN&text=",
+                "pc-url": "https://translate.google.cn/#view=home&op=translate&sl=auto&tl=zh-CN&text=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },{
+                "name": "百度翻译",
+                "url": "https://fanyi.baidu.com/#en/zh/",
+                "pc-url": "https://fanyi.baidu.com/#en/zh/",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+			{
+                "name": "高德地图",
+                "url": "https://ditu.amap.com/search?query=",
+                "pc-url": "https://ditu.amap.com/search?query=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+			{
+                "name": "百度百科",
+                "url": "https://baike.baidu.com/search?word=",
+                "pc-url": "https://baike.baidu.com/search?word=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+			 {
+                "name": "维基百科",
+                "url": "https://zh.wikipedia.org/w/index.php?search=",
+                "pc-url": "https://zh.wikipedia.org/w/index.php?search=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+            {
+                "name": "知乎搜索",
+                "url": "https://www.zhihu.com/search?type=content&q=",
+                "pc-url": "https://www.zhihu.com/search?type=content&q=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+            {
+                "name": "微博搜索",
+                "url": "http://s.weibo.com/weibo/",
+                "pc-url": "http://s.weibo.com/weibo/",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+            
+            {
+                "name": "Bilibili",
+                "url": "https://search.bilibili.com/all?keyword=",
+                "pc-url": "https://search.bilibili.com/all?keyword=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+			
+ 
+        ];
+ 
+    </script>
+ 
+    <script>
+ 
+        const search_cookie_pre = "search_";
+        const search_eq = search_cookie_pre+"_eq";
+        let search_time_style = 0; // 自动校正iframe
+        let focus_time = 1.5*60*60*1000; // 保护用户输入框隐私，1.5h不聚焦删一次
+        let blur_time = 3*60*60*1000; // 保护用户输入框隐私，3h聚焦删一次
+        let dead_input_num = 0; // 自动初始化输入框
+ 
+        function console_log(txt){ // 调试日志
+            search_debug === true ? console.info(txt) : "";
+        }
+ 
+        function set_search(val){ // 配置当前的搜索引擎
+            console_log("配置当前搜索引擎");
+            setCookie(search_eq, val, 30 * 24 * 60 * 60 * 1000);
+            for (let i = 0; i<document.getElementsByClassName("option").length; i++) {
+                document.getElementsByClassName("option")[i].removeAttribute("selected");
+            }
+            document.getElementsByClassName("option-"+val)[0].setAttribute("selected", "selected");
+            document.getElementsByTagName("title")[0].innerText = document.getElementsByClassName("option-"+val)[0].innerText+title;
+        }
+ 
+        function create_input(pre) { // 渲染模板
+            console_log("渲染模板数据");
+            document.getElementsByTagName("title")[0].innerText = title;
+            let content = document.getElementsByClassName("content")[0];
+            content.innerHTML = '<div class="input-div"><select class="select search-style" id="select"></select><input type="text" value="" maxlength="100" id="input" class="input search-style"  placeholder="'+ pre +'梓祥大帝国搜索集合 按Enter开始搜索"/><div class="clear"></div></div><div class="res-div"></div>';
+            let append_tag = [];
+            for (let i = 0; i < search.length; i++){
+                let tag = '<option class="option option-'+i+'" value="'+i+'">'+ search[i]["name"] +'</option>';
+                append_tag.push(tag);
+            }
+            document.getElementsByClassName("select")[0].innerHTML = append_tag.join("");
+ 
+            let _eq = getCookie(search_eq);
+            if (_eq){set_search(_eq);}else {set_search(0);}
+        }
+        create_input("");
+ 
+        function dead_input(del_time) { // 处理清空用户输入的情况
+            try {
+                clearTimeout(dead_input_num);
+                console_log(dead_input_num+"-清除成功");
+            }catch (e) {
+                console_log(dead_input_num+"-timeout is none");
+            }
+            dead_input_num = setTimeout(function () {
+                create_input("重新");
+                console_log(del_time);
+            }, del_time);
+            console_log(dead_input_num);
+        }
+ 
+        function iframe_load() { // iframe加载动画
+            console_log("iframe加载完成");
+            delete_loading();
+        }
+ 
+        function run_search(){ // 执行搜索
+            document.getElementsByClassName("input")[0].blur(); // 主动失去聚焦后会自动退去键盘
+ 
+            try {clearInterval(search_time_style);}
+            catch (e) {console_log("第一次进入页面是没有定时器的");}
+ 
+            let _select = document.getElementById("select");
+            let engine = _select.options[_select.selectedIndex].value;
+            let _input = document.getElementById("input").value;
+            if (!_input.trim()) {
+                alert_txt("内容不能为空", 1000);
+                return;
+            }
+ 
+            let http_url = _input;
+            let reg = /^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)+([A-Za-z0-9-~\/])/; // 至少是 http://a 这种格式
+            if(!reg.test(http_url)){
+                console_log("不是网址");
+            }else{
+                console_log("是网址");
+                window.open(http_url, "_blank"); // 搜索4/4
+                return;
+            }
+ 
+            let url_right = search[engine]["url_right"].trim(); // 参数固定后缀
+            let res_url = search[engine]["url"]+_input+url_right; // get
+            let pc_res_url = search[engine]["pc-url"]+_input+url_right; // get
+ 
+            if (window.innerWidth > 640) {
+                document.getElementsByClassName("res-div")[0].innerHTML = '<div class="flex-center" style="font-size: 15px;color: #CD5C5;height: 50px;text-align:center;line-height: 22px;padding: 5px 20px;"><div style="height: 44px;overflow: hidden;">依据《梓祥大帝国跨域显示令》，PC模式会自动打开新标签来展示搜索结果</div></div>';
+                window.open(pc_res_url, "_blank"); // 搜索1/4
+                return;
+            }else {
+                // 操作iOS设备Bug情况
+                let u = navigator.userAgent;
+                let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+                let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+                if (isAndroid === true || isiOS === false){ // android
+                    console_log("Android");
+                }else if(isAndroid === false || isiOS === true){ // ios
+                    console_log("iOS");
+                    document.getElementsByClassName("res-div")[0].innerHTML = '<div class="flex-center" style="font-size: 15px;color: #CD5C5;height: 50px;text-align:center;line-height: 22px;padding: 5px 20px;"><div style="height: 44px;overflow: hidden;">依据《梓祥大帝国跨域显示令》，iOS移动设备会自动打开新标签来展示搜索结果</div></div>';
+                    window.open(res_url, "_blank"); // 由于iOS兼容iframe特性不佳，所以直接打开新标签
+                    return;
+                }else { // pc
+                    console_log("PC");
+                }
+            }
+ 
+            if (search[engine]["X-Frame-Options"]){
+                console_log("依据《梓祥大帝国跨域显示令》，该网站禁止非同源在iframe中加载");
+                document.getElementsByClassName("res-div")[0].innerHTML = '<div class="flex-center" style="font-size: 15px;color: #CD5C5;height: 50px;text-align:center;line-height: 22px;padding: 5px 20px;"><div style="height: 44px;overflow: hidden;">由于“'+search[engine]["name"]+'”违反了《梓祥大帝国跨域显示令》，遂对其进行跨域限制，已经在新标签打开了本次搜索结果</div></div>';
+                window.open(res_url, "_blank"); // 搜索2/4
+                setTimeout(function () {
+                    delete_loading();
+                }, 700);
+            }else {
+                document.getElementsByClassName("res-div")[0].innerHTML = '<iframe class="iframe iframe-box" id="iframe-box" src="" οnlοad="iframe_load()"></iframe>';
+                search_time_style = setInterval(function () { // 自动校正宽高
+                    console_log("自动校正iframe宽和高");
+                    if (window.innerWidth > 780){
+                        document.getElementsByClassName("iframe-box")[0].style.height = (window.innerHeight*0.9 - 58)+"px";
+                        document.getElementsByClassName("iframe-box")[0].style.width = 780+"px";
+                    }else {
+                        document.getElementsByClassName("iframe-box")[0].style.height = (window.innerHeight + 80)+"px";
+                        document.getElementsByClassName("iframe-box")[0].style.width = window.innerWidth+"px";
+                    }
+                }, 1000);
+                document.getElementsByClassName("iframe-box")[0].setAttribute("src", res_url);
+            }
+            show_loading();
+        }
+ 
+        (function () {
+            document.getElementsByClassName("input")[0].addEventListener("mouseover", function (e) {
+                console_log("鼠标over了输入框，输入框自动聚焦");
+                let that = this;
+                that.focus();
+            });
+            document.getElementById("select").onchange = function(e){ // 设置历史和当前选中的搜索引擎
+                console_log("选择搜索引擎");
+                let that = this;
+                set_search(that.value);
+            };
+            document.getElementById("input").onfocus = function(e){
+                console_log("监听输入框状态-onfocus");
+                document.getElementsByClassName("select")[0].classList.add("liner-color");
+                dead_input(focus_time);
+            };
+            document.getElementById("input").onblur = function(e){
+                console_log("监听输入框状态-onblur");
+                document.getElementsByClassName("select")[0].classList.remove("liner-color");
+                dead_input(blur_time);
+            };
+            document.onkeyup = function (event) { // Enter
+                console_log("按键盘enter进行搜索");
+                let _key = event.key;
+                if (_key === "Enter") {run_search();}
+            };
+        })("用户操作");
+ 
+        
+        /*
+        *  个性化功能
+        * */
+       
+        const bg_cookie = search_cookie_pre + "bg_color";
+ 
+        (function () {
+            let bg_color = getCookie(bg_cookie)*1;
+            if (!bg_color) {
+                setCookie(bg_cookie, 0);
+            }else {
+                if (bg_color === 0){
+                    document.getElementById("body").classList.remove("bg-black");
+                } else if (bg_color === 1) {
+                    document.getElementById("body").classList.add("bg-black");
+                }
+            }
+        })();
+ 
+        document.getElementsByTagName("body")[0].addEventListener("click", function () {
+            many_click(3, change_bgcolor);
+        });
+ 
+        function change_bgcolor() {
+            if (document.getElementById("body").classList.contains("bg-black")){
+                document.getElementById("body").classList.remove("bg-black");
+                // 更新cookie
+                setCookie(bg_cookie, 0);
+                
+            }else {
+                document.getElementById("body").classList.add("bg-black");
+                setCookie(bg_cookie, 1);
+            }
+        }
+ 
+ 
+    </script>
+	<script>
+	$(document).ready(function() {
+
+
+    //菜单点击
+    $("#menu").click(function(event) {
+        $(this).toggleClass('on');
+        $(".list").toggleClass('closed');
+        $(".mywth").toggleClass('hidden');
+    });
+    $("#content").click(function(event) {
+        $(".on").removeClass('on');
+        $(".list").addClass('closed');
+        $(".mywth").removeClass('hidden');
+    });
+    $(".mywth").click(function(event) {
+        var wt = $("body").width();
+        if (wt < 750 || wt == 750) {
+            
+        }
+    });
+});
+</script>
+</body>
+</html>
+
+
+
+
+
