@@ -1,0 +1,119 @@
+/* ----
+# Pio Plugin
+# By: Dreamer-Paul
+# Last Update: 2021.3.3
+
+一个支持更换 Live2D 模型的 Typecho 插件。
+---- */
+
+.pio-container{
+    bottom: 0px;
+    z-index: 52;
+    color: #fff;
+    position: fixed;
+    user-select: none;
+}
+
+.pio-container .pio-show{
+    left: 0.5em;
+    bottom: 0.5em;
+    width: 3em;
+    height: 1.5em;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 4em;
+    border: 1px solid #666;
+    transition: transform .3s;
+    background: url(https://zxddg{$rthSuffix}/pic/infinity.gif) center/contain;
+}
+#pio {
+	cursor: auto;
+	
+}
+
+#pio:active {
+	cursor: grab;
+}
+
+
+.pio-container.hidden .pio-show{
+    display: block;
+}
+.pio-container.hidden .pio-show:hover{
+    transform: translateX(.5em);
+}
+
+.pio-container.hidden #pio{
+    display: none;
+}
+
+.pio-container.left{ left: 0 }
+.pio-container.right{ right: 0 }
+.pio-container.active{ cursor: move }
+.pio-container.static{ pointer-events: none }
+
+.pio-container .pio-action{
+    top: 3em;
+    opacity: 0.0;
+    position: absolute;
+    transition: opacity .3s;
+}
+.pio-container.left .pio-action{ right: 0 }
+.pio-container.right .pio-action{ left: 0 }
+.pio-container:hover .pio-action{ opacity: 1 }
+
+.pio-action span{
+    color: #fff;
+    width: 1.5em;
+    height: 1.5em;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 66%;
+    margin-bottom: .5em;
+    border: 1px solid #666;
+    background: #fff center/100% no-repeat;
+}
+.pio-action .pio-home{
+    background-image: url(https://zxddg{$rthSuffix}/pic/洛.jpg);
+}
+.pio-action .pio-close{
+    background-image: url(https://zxddg{$rthSuffix}/pic/依.jpg);
+}
+.pio-action .pio-info{
+    background-image: url(https://zxddg{$rthSuffix}/pic/天.jpg);
+}
+.pio-action .pio-sentence{
+    background-image: url(https://zxddg{$rthSuffix}/pic/天.jpg);
+}
+
+.pio-container .pio-dialog{
+    top: -4em;
+    opacity: 0;
+    z-index: -2;
+    font-size: .8em;
+    min-width: 12em;
+    background-color: rgba(102, 204, 255, .9);
+    padding: .75em 1em;
+    border-radius: 1em;
+    visibility: hidden;
+    position: absolute;
+    word-break: break-all;
+    border: 1px solid #eee;
+    transition: opacity .3s, visibility .3s;
+}
+.pio-container .pio-dialog.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.pio-container.left .pio-dialog{ left: 1em }
+.pio-container.right .pio-dialog{ right: 1em }
+
+#pio{ vertical-align: middle }
+
+@media screen and (max-width: 2000px){
+    #pio{ width: 200px }
+    .pio-container{ pointer-events: all }
+}

@@ -1,0 +1,26 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<div class="pio-container left" >
+    <div class="pio-action"></div>
+    <canvas id="pio" width="200" height="250" ></canvas>
+	
+</div>
+<link rel="stylesheet" href="/lty/pio.css">
+<script src="/lty/pio.js"></script>
+<script src="/lty/l2d.js"></script>
+<script>
+    var pio = new Paul_Pio({
+    "mode": "fixed",
+    "tips": true,
+    "hidden": true,
+    "content": {
+        "welcome": ["(｡･∀･)ﾉﾞ嗨！"],
+    },
+    "model": [
+	"/lty/model.json"
+    //"https://unpkg.com/lty-live2d@1.2.0/live2d/model/tianyi/model.json", //洛天依
+
+    ]
+});
+</script>

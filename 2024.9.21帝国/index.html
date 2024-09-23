@@ -1,0 +1,40 @@
+<link rel="apple-touch-icon" sizes="180x180" href="/pic/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/pic/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/pic/logo.png">
+<link rel="mask-icon" href="/pic/logo.png" color="#5bbad5">
+<title>梓祥大帝国</title>
+<center><div>
+	<h1>&nbsp</h1> <!--通过空格实现上下居中-->
+	<h2>祥</h2>
+</div></center>
+<style>div{
+	font-size:60px
+	}
+</style>
+
+<script type="text/javascript">
+var userAgent = navigator.userAgent.toLowerCase();
+    var platform;
+    if(userAgent == null || userAgent == ''){
+        platform = 'WEB' ;
+    }else{
+        if(userAgent.indexOf("android") != -1 ){
+            platform = 'ANDROID';
+            location.href = "m.html";
+        }else if(userAgent.indexOf("ios") != -1 || userAgent.indexOf("iphone") != -1 || userAgent.indexOf("ipad") != -1){
+            platform = 'IOS';
+            location.href = "ipad.html";
+		}else if(userAgent.indexOf("iphone") != -1){
+            platform = 'IOS';
+            location.href = "m.html";
+        }else if(userAgent.indexOf("windows phone") != -1 ){ 
+            platform = 'WP';
+            location.href = "m.html";
+        }else{
+            platform = 'WEB' ;
+            location.href = "pc.html";
+        }
+    }
+</script>
+  
+

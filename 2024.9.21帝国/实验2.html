@@ -1,0 +1,40 @@
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<link rel="stylesheet" href="/pio.css">
+<script src="/pio.js"></script>
+
+
+<script>
+L2Dwidget.init({
+"model": {
+
+//jsonpath控制显示那个小萝莉模型，替换时后面名字也要替换掉
+jsonPath: "https://unpkg.com/lty-live2d@1.2.0/live2d/model/tianyi/model.json",
+
+"scale": 1
+},
+
+"display": {
+
+"position": "left", //看板娘的表现位置
+"width": 250, //小萝莉的宽度
+"height": 500, //小萝莉的高度
+"hOffset": 0,
+
+"vOffset": -136
+},
+
+"mobile": {
+
+"show": true,
+
+"scale": 0.5
+},
+
+"react": {
+
+"opacityDefault": 0.7,
+
+"opacityOnHover": 0.2
+}
+});
+</script>

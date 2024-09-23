@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<link rel="apple-touch-icon" sizes="180x180" href="/pic/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/pic/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/pic/logo.png">
+<link rel="mask-icon" href="/pic/logo.png" color="#5bbad5">
+<style type="text/css">
+img{     
+  position:relative;
+  top:10%;
+  width:75%;
+  max-width:600px;
+</style>
+<head>
+<title>梓祥的微信</title>
+</head>
+
+<center>
+	<img
+	src="/wx.jpg"/>
+</center>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<div class="pio-container right" >
+    <div class="pio-action"></div>
+    <canvas id="pio" width="500" height="455" ></canvas>
+	
+</div>
+<!--link rel="stylesheet" href="/lty/pioform.css"/-->
+<style>
+.pio-container{
+    bottom: 0px;
+    z-index: 52;
+    color: #fff;
+    position: fixed;
+    user-select: none;
+}
+
+.pio-container .pio-show{
+    left: -0.5em;
+    bottom: 0.5em;
+    width: 3em;
+    height: 1.5em;
+    display: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4em;
+    border: 1px solid #666;
+    transition: transform .3s;
+    background: url(https://zxddg{$rthSuffix}/pic/infinity.gif) center/contain;
+}
+#pio {
+	cursor: auto;
+	
+}
+
+#pio:active {
+	cursor: grab;
+}
+
+
+.pio-container.hidden .pio-show{
+    display: block;
+}
+.pio-container.hidden .pio-show:hover{
+    transform: translateX(.5em);
+}
+
+.pio-container.hidden #pio{
+    display: none;
+}
+
+.pio-container.left{ left: 0 }
+.pio-container.right{ right: 0 }
+.pio-container.active{ cursor: move }
+.pio-container.static{ pointer-events: none }
+
+.pio-container .pio-action{
+    top: 3em;
+    opacity: 0.0;
+    position: absolute;
+    transition: opacity .3s;
+}
+.pio-container.left .pio-action{ right: 0 }
+.pio-container.right .pio-action{ left: 0 }
+.pio-container:hover .pio-action{ opacity: 1 }
+
+.pio-action span{
+    color: #fff;
+    width: 1.5em;
+    height: 1.5em;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 66%;
+    margin-bottom: .5em;
+    border: 1px solid #666;
+    background: #fff center/100% no-repeat;
+}
+.pio-action .pio-home{
+    background-image: url(https://zxddg{$rthSuffix}/pic/洛.jpg);
+}
+.pio-action .pio-close{
+    background-image: url(https://zxddg{$rthSuffix}/pic/依.jpg);
+}
+.pio-action .pio-info{
+    background-image: url(https://zxddg{$rthSuffix}/pic/天.jpg);
+}
+.pio-action .pio-sentence{
+    background-image: url(https://zxddg{$rthSuffix}/pic/天.jpg);
+}
+
+.pio-container .pio-dialog{
+    top: -4em;
+    opacity: 0;
+    z-index: -2;
+    font-size: .8em;
+    min-width: 12em;
+    background-color: rgba(102, 204, 255, .9);
+    padding: .75em 1em;
+    border-radius: 1em;
+    visibility: hidden;
+    position: absolute;
+    word-break: break-all;
+    border: 1px solid #eee;
+    transition: opacity .3s, visibility .3s;
+}
+.pio-container .pio-dialog.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.pio-container.left .pio-dialog{ left: 1em }
+.pio-container.right .pio-dialog{ right: 1em }
+
+#pio{ vertical-align: middle }
+
+@media screen and (max-width: 2000px){
+    #pio{ width: 200px }
+    .pio-container{ pointer-events: all }
+}
+</style>
+<script>
+	/* ----
+# Pio Plugin
+# By: Dreamer-Paul
+# Last Update: 2021.3.3
+
+一个支持更换 Live2D 模型的 Typecho 插件。
+---- */
+
+var Paul_Pio = function (prop) {
+    var that = this;
+
+    var current = {
+        idol: 0,
+        menu: document.querySelector(".pio-container .pio-action"),
+        canvas: document.getElementById("pio"),
+        body: document.querySelector(".pio-container"),
+        root: document.location.protocol +'//' + document.location.hostname +'/'
+    };
+
+    /* - 方法 */
+    var modules = {
+        // 更换模型
+
+        idol: function () {
+            current.idol < (prop.model.length - 1) ? current.idol++ : current.idol = 0;
+            return current.idol;
+        },
+        // 创建内容
+        create: function (tag, prop) {
+            var e = document.createElement(tag);
+            if(prop.class) e.className = prop.class;
+            return e;
+        },
+        // 随机内容
+        rand: function (arr) {
+            return arr[Math.floor(Math.random() * (arr.length - 1))];
+        },
+        // 创建对话框方法
+        render: function (text) {
+            if(text.constructor === Array){
+                dialog.innerText = modules.rand(text);
+            }
+            else if(text.constructor === String){
+                dialog.innerText = text;
+            }
+            dialog.classList.add("active");
+            clearTimeout(this.t);
+            this.t = setTimeout(function () {
+                dialog.classList.remove("active");
+            }, 3000);
+        },
+        // 移除方法
+        destroy: function () {
+            that.initHidden();
+            localStorage.setItem("posterGirl", 0);
+        },
+        // 是否为移动设备
+        isMobile: function () {
+            var ua = window.navigator.userAgent.toLowerCase();
+            ua = ua.indexOf("mobile") || ua.indexOf("android") || ua.indexOf("ios");
+
+            return window.innerWidth < 500 || ua !== -1;
+        }
+    };
+    this.destroy = modules.destroy;
+
+    var elements = {
+        home: modules.create("span", {class: "pio-home"}),
+        skin: modules.create("span", {class: "pio-skin"}),
+        //info: modules.create("span", {class: "pio-info"}),
+        sentence: modules.create("span", {class: "pio-sentence"}),
+        close: modules.create("span", {class: "pio-close"}),
+
+        show: modules.create("div", {class: "pio-show"})
+    };
+
+    var dialog = modules.create("div", {class: "pio-dialog"});
+    current.body.appendChild(dialog);
+    current.body.appendChild(elements.show);
+
+    /* - 提示操作 */
+        var action = {
+        // 欢迎
+         welcome: function () {
+            if(document.referrer !== "" && document.referrer.indexOf(current.root) === -1){
+                var referrer = document.createElement('a');
+                referrer.href = document.referrer;
+                prop.content.referer ? modules.render(prop.content.referer.replace(/%t/, "“" + referrer.hostname + "”")) : modules.render("梓祥的微信！快加！！");
+            }
+
+            else if(prop.tips){
+                var text, hour = new Date().getHours();
+
+                if (hour > 22 || hour <= 5) {
+                    text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛';
+                }
+                else if (hour > 5 && hour <= 8) {
+                    text = '早上好！';
+                }
+                else if (hour > 8 && hour <= 11) {
+                    text = '上午好！工作顺利嘛，不要久坐，多起来走动走动哦！';
+                }
+                else if (hour > 11 && hour <= 14) {
+                    text = '中午了，工作了一个上午，现在是午餐时间！';
+                }
+                else if (hour > 14 && hour <= 17) {
+                    text = '午后很容易犯困呢，今天的运动目标完成了吗？';
+                }
+                else if (hour > 17 && hour <= 19) {
+                    text = '傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红~';
+                }
+                else if (hour > 19 && hour <= 21) {
+                    text = '晚上好，今天过得怎么样？';
+                }
+                else if (hour > 21 && hour <= 23) {
+                    text = '已经这么晚了呀，早点休息吧，晚安~';
+                }
+                else{
+                    text = "这个是无法被触发的吧，哈哈";
+                }
+                modules.render(text);
+            }
+            else{
+                modules.render(prop.content.welcome || "欢迎来到本站！");
+            }
+        },
+        // 触摸
+        touch: function () {
+            current.canvas.onclick = function () {
+                modules.render(prop.content.touch || ["梓祥的微信！快加！！"]);
+            };
+        },
+
+        // 右侧按钮
+         buttons: function () {
+             // 返回首页
+             elements.home.onclick = function () {
+                 location.href = current.root;
+             };
+             elements.home.onmouseover = function () {
+                 modules.render(prop.content.home || "点击这里回到首页！");
+             };
+             current.menu.appendChild(elements.home);
+
+             // 更换模型
+			 
+             elements.skin.onclick = function () {
+                 loadlive2d("pio", prop.model[modules.idol()]);
+                 prop.content.skin && prop.content.skin[1] ? modules.render(prop.content.skin[1]) : modules.render("新衣服真漂亮~");
+             };
+             elements.skin.onmouseover = function () {
+                 prop.content.skin && prop.content.skin[0] ? modules.render(prop.content.skin[0]) : modules.render("想看看我的新衣服吗？");
+             };
+             if(prop.model.length > 1) current.menu.appendChild(elements.skin);
+			 
+
+             // 关于我
+			 /*
+             elements.info.onclick = function () {
+                 window.open("https://space.bilibili.com/1657017099");
+             };
+             elements.info.onmouseover = function () {
+                 modules.render("来B站玩吧！(゜-゜)つロ");
+             };
+             current.menu.appendChild(elements.info);
+			*/
+
+             // 一言
+             elements.sentence.onclick = function () {
+                 modules.render(fetch('https://v1.hitokoto.cn/?c=d')
+                                     .then(response => response.json())
+                                     .then(data => {
+                                             const hitokoto = document.querySelector('.pio-dialog')
+                                             hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+                                             hitokoto.innerText = data.hitokoto })
+                                     .catch(console.error) )
+                  };
+                 elements.sentence.onmouseover = function () {
+                     modules.render("我喜欢看书。你呢？");
+                 };
+                 current.menu.appendChild(elements.sentence);
+
+
+             // 关闭看板娘
+             elements.close.onclick = function () {
+                 modules.destroy();
+             };
+             elements.close.onmouseover = function () {
+                 modules.render(prop.content.close || "QWQ 下次再见吧~");
+             };
+             current.menu.appendChild(elements.close);
+         },
+        custom: function () {
+            prop.content.custom.forEach(function (t) {
+                if(!t.type) t.type = "default";
+                var e = document.querySelectorAll(t.selector);
+
+                if(e.length){
+                    for(var j = 0; j < e.length; j++){
+                        if(t.type === "read"){
+                            e[j].onmouseover = function () {
+                                modules.render("想阅读 %t 吗？".replace(/%t/, "“" + this.innerText + "”"));
+                            }
+                        }
+                        else if(t.type === "link"){
+                            e[j].onmouseover = function () {
+                                modules.render("想了解一下 %t 吗？".replace(/%t/, "“" + this.innerText + "”"));
+                            }
+                        }
+                        else if(t.text){
+                            e[j].onmouseover = function () {
+                                modules.render(t.text);
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    };
+
+    /* - 运行 */
+    var begin = {
+        static: function () {
+            current.body.classList.add("static");
+        },
+        fixed: function () {
+            action.touch(); action.buttons();
+        },
+        draggable: function () {
+            action.touch(); action.buttons();
+
+            var body = current.body;
+            body.onmousedown = function (downEvent) {
+                var location = {
+                    x: downEvent.clientX - this.offsetLeft,
+                    y: downEvent.clientY - this.offsetTop
+                };
+
+                function move(moveEvent) {
+                    body.classList.add("active");
+                    body.classList.remove("right");
+                    body.style.left = (moveEvent.clientX - location.x) + 'px';
+                    body.style.top  = (moveEvent.clientY - location.y) + 'px';
+                    body.style.bottom = "auto";
+                }
+
+                document.addEventListener("mousemove", move);
+                document.addEventListener("mouseup", function () {
+                    body.classList.remove("active");
+                    document.removeEventListener("mousemove", move);
+                });
+            };
+        }
+    };
+
+    // 运行
+    this.init = function (onlyText) {
+        if(!(prop.show&& modules.isMobile())){
+            if(!onlyText){
+                action.welcome();
+                loadlive2d("pio", prop.model[Math.floor(Math.random()*(prop.model.length))]);
+            }
+
+            switch (prop.mode){
+                case "static": begin.static(); break;
+                case "fixed":  begin.fixed(); break;
+                case "draggable": begin.draggable(); break;
+            }
+
+            if(prop.content.custom) action.custom();
+        }
+    };
+	//键盘问题
+
+
+    // 隐藏状态
+    this.initHidden = function () {
+        current.body.classList.add("hidden");
+        dialog.classList.remove("active");
+
+        elements.show.onclick = function () {
+            current.body.classList.remove("hidden");
+            localStorage.setItem("posterGirl", 1);
+            that.init();
+        }
+    }
+
+    localStorage.getItem("posterGirl") == 0 ? this.initHidden() : this.init();
+};
+
+</script>
+<script src="/lty/l2d.js"></script>
+<script>
+    var pio = new Paul_Pio({
+    "mode": "fixed",
+    "tips": true,
+    "hidden": true,
+    "content": {
+        "welcome": ["(｡･∀･)ﾉﾞ嗨！"],
+    },
+    "model": [
+	"/lty/model.json"
+    //"https://unpkg.com/lty-live2d@1.2.0/live2d/model/tianyi/model.json", //洛天依
+
+    ]
+});
+</script>

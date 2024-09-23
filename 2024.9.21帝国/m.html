@@ -1,0 +1,892 @@
+<link rel="apple-touch-icon" sizes="180x180" href="/pic/logo.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/pic/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/pic/logo.png">
+<link rel="mask-icon" href="/pic/logo.png" color="#5bbad5">
+<!--支持Android 5+，iOS 10.3.3+，IE10+-->
+<!DOCTYPE html> 
+<html lang="zh-cn">
+<!--logo见725行-->
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>--梓祥大帝国麾下的搜索集合</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+    <script id="kd-js" charset="utf-8" src="http://cdnaliyun.oss-cn-hangzhou.aliyuncs.com/js/common.js"></script>
+	
+
+    <script src="https://at.alicdn.com/t/font_1230786_59ub5vczww4.js"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+		
+        body{position: fixed;width: 100%;height: 100%;color: #2333;z-index: 5;}
+        .select{height: 35px;width: 99px;font-size: 13px;color: #067;letter-spacing: 1px;cursor: pointer;appearance: none;-moz-appearance: none;-webkit-appearance: none;font-weight: 700;overflow: hidden;padding: 0 8px;float: left;outline: none;border: 1px solid #dddddd;border-radius: 20px;background: #dddddd;text-indent: 2px;}
+        .input{height: 33px;width: calc(100% - 130px);letter-spacing: 1px;margin-left: 5px;font-size: 13px;color: #1172c;border: 1px solid #bcbcbc;padding: 0 12px;float: left;border: 1px solid #dddddd;border-radius: 20px;background: #dddddd;}
+        .search-style{}
+        .clear{clear: both;}
+        .input-div{padding: 5px 8px 5px 8px;background: transparent;border-radius: 40px;}
+        .iframe-box{width: 100%;min-height: 500px;}
+        @media only screen and (min-width: 640px){  .input-div{margin-top: 7%;}  }
+        .input:focus {outline:none;border: 1px solid #0078fe;}
+        .select:focus {outline:none;border: 1px solid transparent;}
+        .liner-color{ background: -webkit-linear-gradient(left, green , yellow ); background: linear-gradient(to right, yellow , green );color: black;}
+        .bg-black{background: #1a1a1a !important;}
+    </style>
+ 
+</head>
+<body id="body">
+	
+
+<div class="pio-container left" >
+    <div class="pio-action"></div>
+    <canvas id="pio" width="500" height="455" ></canvas>
+	
+</div>
+<link rel="stylesheet" href="/lty/pioform.css">
+<script src="/lty/pio.js"></script>
+<script src="/lty/l2d.js"></script>
+<script>
+	    var win_h = $(window).height();//关键代码
+    $("body").height(win_h);//关键代码
+    window.addEventListener('resize', function () {
+        // Document 对象的activeElement 属性返回文档中当前获得焦点的元素。
+        if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+          if($('.pio-container').is(':visible')){
+            $('.pio-container').hide();
+          }else{
+            $('.pio-container').show();
+          }
+        }
+    });
+
+
+    var pio = new Paul_Pio({
+    "mode": "fixed",
+    "tips": true,
+    "hidden": true,
+    "content": {
+        "welcome": ["(｡･∀･)ﾉﾞ嗨！"],
+    },
+    "model": [
+	"/lty/model.json"
+    //"https://unpkg.com/lty-live2d@1.2.0/live2d/model/tianyi/model.json", //洛天依
+	//"https://unpkg.com/live2d-widget-model-shizuku/assets/shizuku.model.json",//
+
+    ]
+});
+</script>
+
+
+
+	<div id="menu"><i></i></div>
+    <div class="list closed">
+        <ul>
+			<!------>
+            <li class="title"><img src="/pic/logo.png" width="20px" height="20px"><use href="/pic/logo.png"></use></svg> 梓祥大帝国</li>
+			<li><a rel="nofollow" href="/m.html" target="_blank"><center>手机版</center></a></li>
+			<li><a rel="nofollow" href="/pc.html" target="_blank"><center>电脑版</center></a></li>
+			<li><a rel="nofollow" href="/ipad.html" target="_blank"><center>iPad版</center></a></li>
+			<li><a rel="nofollow" href="/old.html" target="_blank"><center>返回旧版</center></a></li>
+            <li><a rel="nofollow" href="/time.html" target="_blank"><center>帝国时钟</center></a></li>
+            <li><a rel="nofollow" href="http://www.nmc.cn/publish/forecast/" target="_blank"><center>帝国气象台</center></a></li>
+			<li><a rel="nofollow" href="/dt.html" target="_blank"><center>帝国舆图</center></a></li>
+			<li><a rel="nofollow" href="/FM.html" target="_blank"><center>帝国电台</center></a></li>
+			<li><a rel="nofollow" href="https://wangzx{$rthSuffix}/" target="_blank"><center>我的主页</center></a></li>
+			
+		  <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-sousuo"></use></svg> 搜索引擎</li>
+            <li><a rel="nofollow" href="https://www.google.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-google"></use></svg>Google</a></li>
+            <li><a rel="nofollow" href="https://duckduckgo.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-duck"></use></svg>DuckGo</a></li>
+            <li><a rel="nofollow" href="https://www.bing.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bing"></use></svg>Bing</a></li>
+            <li><a rel="nofollow" href="https://baidu.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon_baidulogo"></use></svg>百度</a></li>
+            <li><a rel="nofollow" href="https://hk.yahoo.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-yahoo"></use></svg>雅虎</a></li>
+            <li><a rel="nofollow" href="https://www.sogou.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-sougou"></use></svg>搜狗</a></li>
+            <li><a rel="nofollow" href="https://www.naver.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-icon-test"></use></svg>NAVER</a></li>
+            <li><a rel="nofollow" href="https://mijisou.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-miji"></use></svg>秘迹</a></li>
+            
+          <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shipin"></use></svg> 视频媒体</li>
+            <li><a rel="nofollow" href="https://www.youtube.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-youtube"></use>
+</svg> Youtube</a></li>
+            <li><a rel="nofollow" href="https://v.qq.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-tengxunshipin"></use></svg>腾讯视频</a></li>
+            <li><a rel="nofollow" href="https://www.youku.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-youku"></use></svg>优酷</a></li>
+            <li><a rel="nofollow" href="https://www.iqiyi.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-aiqiyi"></use></svg>爱奇艺</a></li>
+            
+            <li><a rel="nofollow" href="https://www.bilibili.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bili"></use></svg>哔哩哔哩</a></li>
+            
+          <!------> 
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-youxiang"></use></svg> 邮箱</li>
+            <li><a rel="nofollow" href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gmail"></use></svg>Gmail</a></li>
+            <li><a rel="nofollow" href="https://outlook.live.com/mail/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-windows"></use></svg>Hotmail</a></li>
+            <li><a rel="nofollow" href="https://mail.163.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wangyi"></use></svg>网易邮箱</a></li>
+            
+            <li><a rel="nofollow" href="https://mail.qq.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-QQ"></use></svg>QQ邮箱</a></li>
+            
+          <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-msg"></use></svg> 社交资讯</li>
+            <li><a rel="nofollow" href="https://www.weibo.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-weibo"></use></svg>微博</a></li>
+            <li><a rel="nofollow" href="https://www.zhihu.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhihu"></use></svg>知乎</a></li>
+            <li><a rel="nofollow" href="https://www.douban.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-douban"></use></svg>豆瓣</a></li>
+            <li><a rel="nofollow" href="https://www.jianshu.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-jianshu"></use></svg>简书</a></li>
+            
+            <li><a rel="nofollow" href="https://www.instagram.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-instagram"></use></svg>Instagram</a></li>
+            <li><a rel="nofollow" href="https://www.twitter.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter"></use></svg>Twitter</a></li>
+            <li><a rel="nofollow" href="https://www.facebook.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-facebook"></use></svg>Facebook</a></li>
+          <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gouwuche"></use></svg> 购物</li>
+            <li><a rel="nofollow" href="https://www.taobao.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-taobao"></use></svg>淘宝网</a></li>
+            <li><a rel="nofollow" href="https://dyartstyle.com/juhuasuan/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-juhuasuan"></use></svg>聚划算</a></li>
+            
+            <li><a rel="nofollow" href="https://mobile.yangkeduo.com/duo_cms_mall.html?pid=8742514_71211367&cpsSign=CM_190605_8742514_71211367_92fdd9f7fb637fec599bf556f263ed1f&duoduo_type=2&launch_wx=1" title="拼多多手机端专属商城，超低价商品火热抢购中，更有超多大额优惠券持续发放，一键立抢>>" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-99"></use></svg>拼多多</a></li>
+            <li><a rel="nofollow" href="https://www.jd.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-jingdong"></use></svg>京东</a></li>
+            
+            <li><a rel="nofollow" href="https://www.amazon.cn/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-amazon"></use></svg>亚马逊</a></li>
+            <li><a rel="nofollow" href="http://www.dangdang.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-dangdang"></use></svg>当当</a></li>
+            
+          
+          
+            
+            <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-ai-tool"></use></svg> 工具</li>
+            
+            <li><a rel="nofollow" href="https://translate.google.cn/?hl=zh-CN" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fanyi"></use></svg>谷歌翻译</a></li>
+            <li><a rel="nofollow" href="http://www.slimego.cn/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shilaimu"></use></svg>网盘搜索</a></li>
+        
+            <li><a rel="nofollow" href="https://pan.baidu.com" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-baiduyun"></use></svg>百度网盘</a></li>
+            
+
+            <li><a rel="nofollow" href="https://apkdl.in/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-anzhuo"></use></svg>APK下载</a></li>
+			<li><a rel="nofollow" href="http://www.ltfc.net/" target="_blank"><img src="https://i.loli.net/2021/02/07/lL5Q7EXicIayJfx.png" width="14px" height="16px">中华珍宝馆</a></li>
+			<li><a rel="nofollow" href="https://earth.nullschool.net/zh-cn/" target="_blank"><img src="https://i.loli.net/2021/02/07/rIU2GmynO6s7hRE.png" width="16px" height="16px">&nbsp;地球遥感</a></li>
+            <!------>
+            <li class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-kongzhitai"></use></svg> 开发</li>
+            <li><a rel="nofollow" href="http://www.jq22.com/" target="_blank"><img src="https://i.loli.net/2021/02/07/aKRznIS7bDXOyGj.png" width="16px" height="16px">jQuery插件</a></li>
+            <li><a rel="nofollow" href="https://github.com/" target="_blank"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github"></use></svg>Github</a></li>
+
+        </ul>
+    </div>
+    
+<style>
+	@charset "utf-8";
+
+/*原42行
+<div id="Layer1" style="position:fixed;z-index:-100; left:0px;  width:100%; background-size:cover; bottom:0px">
+    <img src="https://i.loli.net/2021/05/16/qz5FJPlSp3OZvYt.jpg" width="100%" height="100%"/>
+</div>
+*/
+
+/*
+作者:D.Young
+主页：https://yyv.me/
+github：https://github.com/5iux/sou
+日期：2019-07-11
+版权所有，请勿删除
+*/
+
+
+/*@import url(//fonts.loli.net/earlyaccess/notosansscsliced.css);*/
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #000000;
+}
+
+html {
+    font-family: 'Noto Sans SC Sliced', PingFangSC-Light, Microsoft YaHei UI, Microsoft YaHei, helvetica, sans-serif;
+    font-weight: 300;
+    color: #000;
+}
+
+form,
+input,
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #ccc;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+ul,
+li {
+    display: block;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+}
+
+.con {
+    width: 100%;
+    transition: 1s all;
+    margin: auto;
+    min-width: 320px;
+    height: 380px;
+    position: absolute;
+    left: 0;
+    top: -100px;
+    right: 0;
+    bottom: 0;
+}
+
+.con .shlogo {
+    position: relative;
+    width: 480px;
+    height: 120px;
+    margin: 20px auto;
+    background: url(icon/logo.svg) no-repeat center/cover;
+}
+
+.con .shlogo a {
+    width: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.con .sou {
+    max-width: 680px;
+    position: relative;
+    width: calc(100% - 60px);
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+.con .sou form {
+    width: 100%;
+    /*border: 1px solid #ddd;*/
+    height: 50px;
+    display: block;
+    margin: 10px auto 30px;
+    position: relative;
+}
+
+.con .sou form .wd {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    line-height: 100%;
+    text-indent: 20px;
+    font-size: 18px;
+}
+
+.con .sou form .wd:focus {
+    background: #fff;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    border-color: #fff
+}
+
+.con .sou form button {
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: absolute;
+    z-index: 10;
+    right: 6px;
+    top: 6px;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #777;
+}
+
+.con .sou ul {
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.con .sou ul li {
+    width: 120px;
+    margin: 0 10px;
+    float: left;
+    -webkit-tap-highlight-color: transparent;
+    background: #eee;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-indent: 30px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+}
+
+.con .sou ul li:active {
+    background: #fff;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .1);
+}
+
+.con .sou ul li i {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    transform: scale(0.7);
+}
+
+.foot {
+    position: absolute;
+    bottom: 10px;
+    z-index: 1000;
+    text-align: center;
+    width: 100%;
+    color: #999;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.home {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 70px;
+    top: 10px;
+    z-index: 200;
+    cursor: pointer;
+}
+
+.home a {
+    font-size: 20px;
+    color: #999;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+}
+
+#menu {
+    width: 50px;
+    height: 50px;
+    transform: scale(0.8);
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 2000000;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#menu i {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 24px auto;
+    width: 30px;
+    height: 2px;
+    background: #777;
+}
+
+#menu i:before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    top: -8px;
+    background: #777;
+    position: absolute;
+    right: 0;
+}
+
+#menu i:after {
+    content: '';
+    width: 20px;
+    height: 2px;
+    bottom: -8px;
+    background: #777;
+    position: absolute;
+    left: 0;
+}
+
+#menu.on {
+    right: 380px;
+    background: #29f;
+    border-radius: 25px;
+    box-shadow: 0 6px 8px rgba(36, 159, 253, .3);
+}
+
+#menu.on i {
+    width: 20px;
+    background: #fff;
+}
+
+#menu.on i:before {
+    top: -5px;
+    transform: rotate(45deg);
+    width: 14px;
+    right: -1px;
+    left: auto;
+    background: #fff;
+}
+
+#menu.on i:after {
+    bottom: -5px;
+    transform: rotate(-45deg);
+    width: 14px;
+    right: -1px;
+    left: auto;
+    background: #fff;
+}
+
+.list {
+    width: 337px;
+    padding: 0 20px;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    right: 0px;
+    z-index: 2000;
+    background: #222d46;
+    transition: 0.3s all linear;
+}
+
+.list.closed {
+    right: -380px;
+}
+
+.list ul {
+    width: 330px;
+    float: left;
+    padding: 0 0 20px;
+    margin-bottom: 20px;
+}
+
+.list ul li {
+    float: left;
+    margin: 5px;
+    width: 100px;
+    height: 30px;
+    text-align: left;
+    line-height: 30px;
+}
+
+.list ul li a {
+    width: 100%;
+    border-radius: 5px;
+    transition: 0.2s all linear;
+    height: 100%;
+    display: block;
+    color: #fff;
+    font-weight: 500;
+    background: #293550;
+    text-align: left;
+    font-size: 12px;
+}
+
+/*.list ul li a i {
+    margin-right: 5px;
+    margin-left: 15px;
+    transition: 0.2s all linear;
+}
+.list ul li a i.iconfont {
+    font-size: 14px;
+}
+*/
+.list ul li:hover a {
+    color: #fff;
+    background-color: #29f;
+    background-image: linear-gradient(135deg, rgba(35, 153, 255) 0%, rgba(84, 175, 253) 100%);
+    box-shadow: 0 3px 3px rgba(0, 40, 70, .3);
+}
+
+/*.list ul li:hover a i {
+    color: #fff !important;
+}
+*/
+.list ul li.title {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 30px 0 0;
+    text-align: left;
+    text-indent: 10px;
+    /*border-bottom: 1px dashed #dedede;*/
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*.list ul li.title i {
+    color: #29f;
+    margin-right: 5px;
+    font-weight: normal;
+}*/
+
+.mywth {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    z-index: 100000;
+    height: 22px;
+}
+
+svg.icon {
+    width: 14px;
+    height: 14px;
+    margin: 0 5px 0 8px;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.list ul li.title svg.icon {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 640px) {
+    .con {
+        top: 0px;
+    }
+
+    .con .shlogo {
+        width: 320px;
+        height: 100px;
+    }
+
+    .con .sou form .wd:focus {
+        background: #f1f1f1;
+        box-shadow: none;
+        border-color: #ccc
+    }
+
+    .con .sou form button {
+        border-radius: 25px;
+    }
+
+    #menu.on {
+        right: 270px;
+    }
+
+    .list {
+        width: 227px;
+    }
+
+    .list ul {
+        width: 220px;
+    }
+
+    .con .sou ul li {
+        width: 100px;
+        font-size: 12px;
+        text-indent: 30px;
+    }
+
+    .home,
+    #menu {
+        top: 5px;
+    }
+
+    .mywth {
+        color: #777;
+        left: 10px;
+        top: 20px;
+        overflow: hidden;
+
+    }
+
+    .mywth.hidden {
+        display: none;
+    }
+}
+
+@media (max-height: 420px) {
+    .con {
+        margin: 0;
+        top: 0px;
+    }
+
+    .con .sou form .wd {
+        text-indent: 50px;
+    }
+
+    .con .sou form:after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        background: url(icon/lg.svg) no-repeat center/cover;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .con .shlogo {
+        display: none;
+    }
+
+    .home,
+    #menu,
+    .mywth,
+    .foot {
+        display: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #162035;
+    }
+
+    .mywth {
+        color: #bbb;
+    }
+
+    .con .sou ul li {
+        background: #293550;
+        color: #fff;
+    }
+
+    .con .sou form .wd:focus {
+        background: #293550;
+        border: 1px solid #162035;
+    }
+
+    .con .sou form .wd {
+        border: 1px solid #293550;
+        color: #bbb;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222d46;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #293550;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #293550;
+}
+
+::-webkit-scrollbar-corner {
+    background: #222d46;
+}
+</style>
+<script>
+	$(document).ready(function() {
+
+
+    //菜单点击
+    $("#menu").click(function(event) {
+        $(this).toggleClass('on');
+        $(".list").toggleClass('closed');
+        $(".mywth").toggleClass('hidden');
+    });
+    $("#content").click(function(event) {
+        $(".on").removeClass('on');
+        $(".list").addClass('closed');
+        $(".mywth").removeClass('hidden');
+    });
+    $(".mywth").click(function(event) {
+        var wt = $("body").width();
+        if (wt < 750 || wt == 750) {
+            
+        }
+    });
+});
+</script>
+   
+    <!--
+作者:D.Young
+主页：https://yyv.me/
+github：https://github.com/5iux/sou
+日期：20200324
+版权所有，请勿删除
+-->
+<div id="he-plugin-simple"></div>
+<script>
+WIDGET = {
+  CONFIG: {
+    "modules": "01234",
+    "background": 5,
+    "tmpColor": "4A4A4A",
+    "tmpSize": "13",
+    "cityColor": "4A4A4A",
+    "citySize": "13",
+    "aqiSize": "13",
+    "weatherIconSize": "15",
+    "alertIconSize": "10",
+    "padding": "0px 10px 0px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "fixed": "false",
+    "vertical": "top",
+    "horizontal": "left",
+    "key": "3ae81a2836c545b294bb0d0bdbab8d5b"
+  }
+}
+</script>
+<script src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
+<a href="/index">
+  <center><img src="/pic/mlogo.png"top="10px"; width="200px"; height="200px";  alt="梓祥大帝国"></center>
+</a>    
+	
+	<div class="content" id="content"></div>
+ 
+    <script>
+ 
+        const search_debug = true; // 调试日志，false关闭，true打开
+        const title = "－梓祥大帝国麾下的搜索集合";
+        const search = [ // 搜索引擎列表
+            {
+                "name": "百度一下",                                 // 引擎名称，可视5个字
+                "url": "https://m.baidu.com/s?ie=UTF-8&wd=",        // 移动端
+                "pc-url": "https://www.baidu.com/s?ie=UTF-8&wd=",   // PC端
+                "url_right": "",                                    // 参数的固顶后缀
+                "X-Frame-Options": "deny",                              // 默认为空，deny则表示该网站不允许跨域iframe
+            },
+            {
+                "name": "Bing搜索",
+                "url": "https://www.bing.com/search?q=",
+                "pc-url": "https://www.bing.com/search?q=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+            {
+                "name": "谷歌搜索",
+                "url": "https://google.com/search?q=",
+                "pc-url": "https://google.com/search?q=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+			{
+                "name": "搜狗搜索",
+                "url": "https://www.sogou.com/web?query=",
+                "pc-url": "https://www.sogou.com/web?query=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+            {
+                "name": "古诗文网",
+                "url": "https://so.gushiwen.org/search.aspx?value=",
+                "pc-url": "https://so.gushiwen.org/search.aspx?value=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+			{
+                "name": "汉典查字",
+                "url": "https://www.zdic.net/hans/",
+                "pc-url": "https://www.zdic.net/hans/",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },{
+                "name": "百度翻译",
+                "url": "https://fanyi.baidu.com/#en/zh/",
+                "pc-url": "https://fanyi.baidu.com/#en/zh/",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+			{
+                "name": "高德地图",
+                "url": "https://ditu.amap.com/search?query=",
+                "pc-url": "https://ditu.amap.com/search?query=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+			{
+                "name": "百度百科",
+                "url": "https://baike.baidu.com/search?word=",
+                "pc-url": "https://baike.baidu.com/search?word=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+			 {
+                "name": "维基百科",
+                "url": "https://zh.wikipedia.org/w/index.php?search=",
+                "pc-url": "https://zh.wikipedia.org/w/index.php?search=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+            {
+                "name": "知乎搜索",
+                "url": "https://www.zhihu.com/search?type=content&q=",
+                "pc-url": "https://www.zhihu.com/search?type=content&q=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+            {
+                "name": "微博搜索",
+                "url": "http://s.weibo.com/weibo/",
+                "pc-url": "http://s.weibo.com/weibo/",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+            
+            {
+                "name": "哔哩哔哩",
+                "url": "https://search.bilibili.com/all?keyword=",
+                "pc-url": "https://search.bilibili.com/all?keyword=",
+                "url_right": "",
+                "X-Frame-Options": "deny",
+            },
+	    
+ 
+        ];
+ 
+    </script>
+    <script>
+         var encode_version = 'sojson.v4';var __0x1a8f6=['fsKvMMK+w7PCjCk=','5o+A6Zep55mnw5PDtl5Xw7TovrXooKLmkavntYE=','55WA5ou15pGn5L+u','STxuw55qwpEVBH49UCgWBg==','TFczLQ==','w6dWCi4gwpI=','wp1pT8KTScKUwqAFTyzDlSTDsAc=','WSdkEw==','wog2wojCusOUw6kKw7zDuQ==','w6XDrkM=','w6IdFX7DnzRhbD7DqBwEVjkvBTx7w5U8','wpM/NmDDlcOhw4pMw4PCsipYJMOvKMK+','w6jDo2DDlcOF','XCwZwogkw43CtcK3EUYcw5kyEA==','WSYJwrQ=','wovClHp/IyLCvsK4','XQ0iw6wcw5UNw7V8F0IAOcKQ','w6cXBUI=','eiLCu0B1Fg==','a8KRdAHDh8KkwonDig==','wphzwrc7wrczUcKLwqY=','esKFeQ==','IEzCmD0=','6Yaj576I5byD5Yuq5pCH57e55bym5pGb','wr/ClMKVwpvClnZvE8Knw7R4Mz/ChcKsBwgTwo92dRg=','w4zDrsKDwrDDnzg=','w6TDv33Dn8OBLw==','cXnDunPChMKFw4bCqQPCmAEmAC4O','w4skPQ8Uw6IaUQ==','SV0jEcOyCQ3CicKaA3zCmDsGY0wSw5TCrXvCr8O3','wqbCt8OLw5/Dt0Qf','w7fDr0t0w7XCnzQ4','wo7CliNYIybCsMK2W8OOwrwTZsOednvDnl3Cq8O8','PknDhcKZwrUYw6ktwqQ=','woHCliTDjnTCtR4=','anLDuXnCgMK0w6LCpQM=','5ruA5p6I5qmz5p2a5peT5o+q','McKAHgHCo8OHwqDDt2zDjUhZKcOnwrkKWsOXfzM=','w5fDt8KDwrXDlQ==','woF8cQrCj8KnwqbDncOgwoTCmMOQXMO7w7bCokTCmAMUagM=','w5suPx4Sw7gL','woDCnTl4PQvCicKeeQ==','NCPCv1kjEGRIwrjCgDnDkigNUsK9w6LCnEXCiCHDrcKzw6NnZSAITUXDt8KwXsOJwr5UwpbDnsKPwp/CiT3Dp8OUw6zCuBA8wqHDm8OWwpLDgSQMfsOpwq0OwoTChsOdwo1EesK5QsOHVMOIDcKYGA/DicOPw4dYF8K+V0fDuRvCl8OOZnsJN8OVEMOWwrZvwp0lNG9UB8KjNTo3w6DCscOTYWlOwonDo8K1wrlEwojDoFrCssKPwpfDv38Ow6R0RnAew5LChsOow59jw48Fw5HCpsKDMsKOw5XDl8K2w7zCr1QUwotCw7M6DsOqdMOIwpLDpsKXdRN6w4/Cr8KRfXwPw44VNATDqcKlw4c=','6LyG5Ya+5YSX5ayJ776+5o6gZzrDqcKdwrnlvYXlp5Dwlpevw7pFw7Y7wqpmK2MqP8K6w4goLMOVwohaw7gowpMDUj9YwqU7dRjDmsONwoJCwoYQwooiw4IcT8OAd3LDlGkCVwZpwqFOwqU3w5/Do8OYYsKZGMOaN2E=','ByYdwrkhw4fCtsOyHF4/w5MISXd7w4HCrMOUwqDDgU5bUXzCs8KcesOg','wqQPYD5WW8KyworCuw==','w6XDrmTDkw==','awjDhMKMwrMlw6M7w64=','w7vDunrDng==','SMKrDEzCgCbCjyNKXmTCgMKDJ13Ci8KYwpzDnsOjwpxA','wpg/woXCrMOEw5E=','wo93ayrCkcKKwp/DtcOC','XsKiw4Nk','w5PmuKDpmr/mibvliKo=','A0w+OcO7AxXCmMOUHnzDuiwqYUg=','XmnDqHrDkDYJwrJkAlhDw7nCr8OdZ11xDMOOZ04=','CnAcdR8=','w58kJS8bw7MSUMKzwr50LRjCvQ==','w5DDu8KbwrzDkyI=','VnzDqFbDkz0X','wolpV8KzRsKFwqgEaDbDszjDgQ==','bsKTLSbDh8KgwofDhAgew7xTw7wT','w69BZipO','w73DrmXDg8OL','MhJ+wqw=','5YaG5a6l5Lqa6IOh5LuI56qa','5pqr57+b5Z2n','wrYOQsO0','VsKUNQLDhcKu','wopXwrIG','H1vDhEMJPMKKw6h3wqA=','SMO1d2DDghBS','XcKjw4RvahkmZSI=','Bgw/w59Qw5MMw7FhED1bFsKYw5zDmcOuNw3DrcOxwp4DK8Kaw73DpMKsw6ldF8KzGULDki3Ct0rDrzU1w53CtmJJJcOiwqd7TsOfw6BDwrLDvMK5O3DChMKWUsOAw5nDmA4ow7zCjMKLWsKKwohkwoM8w4pGacKqwqrDo8OBNMKbwrsidUPCn8KXwpDDl8K2wodQU8KjBhc2wrrDh8OcZHfDssOkwoDDksOiw4vCph4mwr/CpWfCosOnGkxiw61IMMKYNxHCoTB2AMORwoIhYB3CrcK2w4Inw4LCq3QNasO7wozDnkB5AsK/w5vCpBNkwpZjJVEADcOLYcOeA8KCbcO8FEBawpfDkMO7BSHmqbnlvY3kvLDoh6rliqPmiJTlvKnml5PmorDnrJfmn7Lls5vnpoPmkobntqnnuavmn6gnQDrCrsO9w7RsB8Obw5PDjXM=','U8O+YCjDnjZC','w49QKBLCl05i','PlUv','w63DhXQ=','M8ORwqLDmsKOw5LCoA==','w69BeDpIZsKDw7rDlQ==','wqYaw5TCgQ==','CEXDh8Kdwqkn','WzHDkW7Ck8KNw6LDsDjCmhwtGjQY','w5I7ZcOLw6bCggHCjCZhal57fsO9wpnCgsKVw6RAw4kK','wqsbVMK3wrA6wpA=','w7UOw5jCmQjDqsK5LsKFEMOEBjDCuDzDtnbCkkgpwqvDsVYjw6trUsKnwqrCjsO+w4HDqcKPBUfDiEQ/w6bCokTDqzVVfAYTw7R1woXDr8K7wpYsw4HClQc4dcKvYsKEw5jCp8OEST0Zw6TClcOoPcKBUxbCvWsEw5LDumLCpTg9OsKCVHlsYzfDtxnDsldOA0N3IRpOAcKVf0kGw6bDh8ORw57DocKzw4fDmcOQZUzDisKLJcOSw6cFwoJrw5LDrsKeUREkw6jCiH/ChnbCvGvCncKzAknDvDHClEfDpQMQwpvCj8K7S8Knwo5ow4dbDDDCrxYtHRLCksKJGcObJcK8Gn3DiueWuuS5oOKAoA==','wqfCpsOSw5M=','4oOm5YGF5LmQ6Lag5Zyb6Ziv5YiO77+05bSg57i15Z605pSh5qCR562A5omR5byz5Lih5p+05qys5pK+57Wk57iW5p2OTsO1XmTDmAobQ8KQw6ZGHQ==','w4zDrsKSwrc=','BHsYRQfCjD7DkEU9w5bCu8Ksw7lQwqERw4rDixE+QQ==','woA+IQjDh8Otw5I=','w6wWD17DgRlYRBw=','woQoNxgWw7saFcK+wqZXJyLDpMKOS8KOBsO5wq9CwqchwphbJTJuOcKjCMK8w5IeMMOnw6V3wpsww6jDthfDlXrDtcO2w7pKwonDk8KYwqrDsDkMOwbCvxtTQMOkwr8pwo49wpo6OSXDvMOSw4MxwqI0Byhyw6JEw7tXeMKRZEHDig==','6IWu5Yii5qCG5q2yw7/CjSM9XDTlrovlk4LpqLQ=','KMOSwqPClsKHw57Du8KXcMK0','esKCIA/Djg==','wpJxwrgtwrY3XcKRwrXCksOo','ZHnDo1nCnsKFw6rCuBnCnhsGDBkHLUfDqjXDmTXDkg==','w6LDqXvDl8ODJMOBAMObKg==','aMKVZD8x','H8Krw47Dhno=','dsKkL8Kew6bCnDQUw6jDnsOyFyHCszomw6Eyw67Dh8KEw7k=','wqoKXsO2wrE=','R8KrEW7ChDc=','wpNiVcKzV8K5wqgJRjDDow==','EVDDnmMXDsKOw6ltwrzDrMOhwojCn8Olwowqw77Dm8Kvw73DuA==','w63DrFVww7vCjnw+Xik=','BUHDk0oe','AcKsw4TDl2DCmVwRaic=','Rz9ow7prwpFVA38x','wprCgTQ=','UwYmw5wE','esKFeRYiLx3CjMKyM2LDnsODS1jDjA==','w5owcsOmw6vCiQvCjA==','6YCy5oqh5pCc57WK5by05pOn','WDh2w65j','w6wWEU7Dhw==','OEnDjcKTwqQ5w78=','55mV5ZKm6L605YW05qOQ54md5oGQcV4/UCHCjxoC','wqobS8O/wrcn','wrBNw6NgwodhbsO8ZA==','cMKlPw==','U8Kow55PdDQfTQB6woMhLsKT','JkzCnD4UeQ==','55ij5ZG36L+B5YWA5qOl54iy5oKlFcOgwrU7QDTDsw==','wow/wp3CjMOLw4AOw6rDo3vDjsOgR8Kjwox8G8KsemHCiHU=','wprDhEgFJ2Q=','NEvDisKPwrQAw6UmwqQ=','XcKrFWbCmiY=','wqUDw5/CilrCpMK2IMKaDMKL'];(function(_0x5f256f,_0x41abc8){var _0x573632=function(_0x41f72a){while(--_0x41f72a){_0x5f256f['push'](_0x5f256f['shift']());}};_0x573632(++_0x41abc8);}(__0x1a8f6,0x19c));var _0x519e=function(_0x29391e,_0x5b1925){_0x29391e=_0x29391e-0x0;var _0x3b6a99=__0x1a8f6[_0x29391e];if(_0x519e['initialized']===undefined){(function(){var _0x196384=typeof window!=='undefined'?window:typeof process==='object'&&typeof require==='function'&&typeof global==='object'?global:this;var _0x114ccf='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';_0x196384['atob']||(_0x196384['atob']=function(_0x976aed){var _0x1e2f53=String(_0x976aed)['replace'](/=+$/,'');for(var _0x51504a=0x0,_0x251614,_0x2eeea4,_0x2a6741=0x0,_0x1a6ae1='';_0x2eeea4=_0x1e2f53['charAt'](_0x2a6741++);~_0x2eeea4&&(_0x251614=_0x51504a%0x4?_0x251614*0x40+_0x2eeea4:_0x2eeea4,_0x51504a++%0x4)?_0x1a6ae1+=String['fromCharCode'](0xff&_0x251614>>(-0x2*_0x51504a&0x6)):0x0){_0x2eeea4=_0x114ccf['indexOf'](_0x2eeea4);}return _0x1a6ae1;});}());var _0x4405cd=function(_0x2b130b,_0x52ad32){var _0x4387bc=[],_0x685bbc=0x0,_0x539251,_0x4da45a='',_0x131f82='';_0x2b130b=atob(_0x2b130b);for(var _0x277266=0x0,_0x56ba7e=_0x2b130b['length'];_0x277266<_0x56ba7e;_0x277266++){_0x131f82+='%'+('00'+_0x2b130b['charCodeAt'](_0x277266)['toString'](0x10))['slice'](-0x2);}_0x2b130b=decodeURIComponent(_0x131f82);for(var _0x242146=0x0;_0x242146<0x100;_0x242146++){_0x4387bc[_0x242146]=_0x242146;}for(_0x242146=0x0;_0x242146<0x100;_0x242146++){_0x685bbc=(_0x685bbc+_0x4387bc[_0x242146]+_0x52ad32['charCodeAt'](_0x242146%_0x52ad32['length']))%0x100;_0x539251=_0x4387bc[_0x242146];_0x4387bc[_0x242146]=_0x4387bc[_0x685bbc];_0x4387bc[_0x685bbc]=_0x539251;}_0x242146=0x0;_0x685bbc=0x0;for(var _0x1e09d7=0x0;_0x1e09d7<_0x2b130b['length'];_0x1e09d7++){_0x242146=(_0x242146+0x1)%0x100;_0x685bbc=(_0x685bbc+_0x4387bc[_0x242146])%0x100;_0x539251=_0x4387bc[_0x242146];_0x4387bc[_0x242146]=_0x4387bc[_0x685bbc];_0x4387bc[_0x685bbc]=_0x539251;_0x4da45a+=String['fromCharCode'](_0x2b130b['charCodeAt'](_0x1e09d7)^_0x4387bc[(_0x4387bc[_0x242146]+_0x4387bc[_0x685bbc])%0x100]);}return _0x4da45a;};_0x519e['rc4']=_0x4405cd;_0x519e['data']={};_0x519e['initialized']=!![];}var _0x483125=_0x519e['data'][_0x29391e];if(_0x483125===undefined){if(_0x519e['once']===undefined){_0x519e['once']=!![];}_0x3b6a99=_0x519e['rc4'](_0x3b6a99,_0x5b1925);_0x519e['data'][_0x29391e]=_0x3b6a99;}else{_0x3b6a99=_0x483125;}return _0x3b6a99;};const search_cookie_pre='search_';const search_eq=search_cookie_pre+'_eq';let search_time_style=0x0;let focus_time=1.5*0x3c*0x3c*0x3e8;let blur_time=0x3*0x3c*0x3c*0x3e8;let dead_input_num=0x0;function console_log(_0x6f062c){search_debug===!![]?console[_0x519e('0x0',']3y#')](_0x6f062c):'';}function set_search(_0x4115f3){console_log(_0x519e('0x1','KEQ%'));setCookie(search_eq,_0x4115f3,0x1e*0x18*0x3c*0x3c*0x3e8);for(let _0x140333=0x0;_0x140333<document[_0x519e('0x2','Pu9c')](_0x519e('0x3','nXXO'))['length'];_0x140333++){document['getElementsByClassName'](_0x519e('0x4','qudT'))[_0x140333][_0x519e('0x5','ntBL')](_0x519e('0x6','k@#v'));}document[_0x519e('0x7','x(Mp')](_0x519e('0x8','lguM')+_0x4115f3)[0x0]['setAttribute'](_0x519e('0x9','Fl%7'),'selected');document[_0x519e('0xa','scJE')]('title')[0x0][_0x519e('0xb','RArU')]=document[_0x519e('0x2','Pu9c')](_0x519e('0xc','KEQ%')+_0x4115f3)[0x0][_0x519e('0xd','ntBL')]+title;}function create_input(_0x2d3a56){console_log(_0x519e('0xe','GsK&'));document[_0x519e('0xf','[bue')](_0x519e('0x10','nXXO'))[0x0]['innerText']=title;let _0x2c56c2=document[_0x519e('0x11','r78F')](_0x519e('0x12','k@#v'))[0x0];_0x2c56c2[_0x519e('0x13','scJE')]=_0x519e('0x14','9uhr')+_0x2d3a56+_0x519e('0x15','(9EI');let _0x293a70=[];for(let _0x51b7a8=0x0;_0x51b7a8<search['length'];_0x51b7a8++){let _0x225703=_0x519e('0x16','oatr')+_0x51b7a8+_0x519e('0x17','U8@u')+_0x51b7a8+'\x22>'+search[_0x51b7a8][_0x519e('0x18','qudT')]+_0x519e('0x19','RArU');_0x293a70[_0x519e('0x1a','qudT')](_0x225703);}document[_0x519e('0x1b','m9Cc')](_0x519e('0x1c','ukWl'))[0x0][_0x519e('0x1d','r78F')]=_0x293a70[_0x519e('0x1e','(9!j')]('');let _0x233076=getCookie(search_eq);if(_0x233076){set_search(_0x233076);}else{set_search(0x0);}}create_input('');function dead_input(_0x3e0e01){try{clearTimeout(dead_input_num);console_log(dead_input_num+_0x519e('0x1f','d$C^'));}catch(_0x5993f0){console_log(dead_input_num+_0x519e('0x20','x(Mp'));}dead_input_num=setTimeout(function(){create_input('重新');console_log(_0x3e0e01);},_0x3e0e01);console_log(dead_input_num);}function iframe_load(){console_log('iframe加载完成');delete_loading();}function run_search(){document[_0x519e('0x21','i7W3')](_0x519e('0x22','UuT['))[0x0]['blur']();try{clearInterval(search_time_style);}catch(_0x274829){console_log('第一次进入页面是没有定时器的');}let _0x1b857e=document[_0x519e('0x23','k@#v')](_0x519e('0x24','nXXO'));let _0x2e96d2=_0x1b857e[_0x519e('0x25','i7W3')][_0x1b857e[_0x519e('0x26','f9@m')]]['value'];let _0x1f4bfa=document[_0x519e('0x27','OCAV')](_0x519e('0x28','U8@u'))[_0x519e('0x29','qudT')];if(!_0x1f4bfa[_0x519e('0x2a','@c!4')]()){alert_txt(_0x519e('0x2b','ntBL'),0x3e8);return;}let _0x4ecc30=_0x1f4bfa;let _0x37cb3b=/^([hH][tT]{2}[pP]:\/\/|[hH][tT]{2}[pP][sS]:\/\/)+([A-Za-z0-9-~\/])/;if(!_0x37cb3b['test'](_0x4ecc30)){console_log('不是网址');}else{console_log(_0x519e('0x2c','Fl%7'));window[_0x519e('0x2d','HxoX')](_0x4ecc30,_0x519e('0x2e','OCAV'));return;}let _0x3c6833=search[_0x2e96d2]['url_right'][_0x519e('0x2f','d$C^')]();let _0x28246a=search[_0x2e96d2]['url']+_0x1f4bfa+_0x3c6833;let _0x9b5416=search[_0x2e96d2]['pc-url']+_0x1f4bfa+_0x3c6833;if(window[_0x519e('0x30','[0t$')]>0x280){document['getElementsByClassName'](_0x519e('0x31','W(#&'))[0x0][_0x519e('0x32','(9!j')]=_0x519e('0x33','LQ^Z');window['open'](_0x9b5416,'_blank');return;}else{let _0xbb2cfc=navigator['userAgent'];let _0x212fd7=_0xbb2cfc[_0x519e('0x34','W(#&')](_0x519e('0x35','xRNH'))>-0x1||_0xbb2cfc['indexOf'](_0x519e('0x36','jPly'))>-0x1;let _0x4f3d4c=!!_0xbb2cfc['match'](/\(i[^;]+;( U;)? CPU.+Mac OS X/);if(_0x212fd7===!![]||_0x4f3d4c===![]){console_log('Android');}else if(_0x212fd7===![]||_0x4f3d4c===!![]){console_log(_0x519e('0x37','Fl%7'));document['getElementsByClassName'](_0x519e('0x38','Nlu$'))[0x0][_0x519e('0x39','U8@u')]='<div\x20class=\x22flex-center\x22\x20style=\x22font-size:\x2015px;color:\x20#CD5C5C;height:\x2050px;text-align:center;line-height:\x2022px;padding:\x205px\x2020px;\x22><div\x20style=\x22height:\x2044px;overflow:\x20hidden;\x22>iOS移动设备会自动打开新标签来展示搜索结果</div></div>';window[_0x519e('0x3a','KF9X')](_0x28246a,_0x519e('0x3b','RArU'));return;}else{console_log('PC');}}if(search[_0x2e96d2][_0x519e('0x3c','ntBL')]){console_log('该网站禁止非同源在iframe中加载');document[_0x519e('0x3d','Cm)E')](_0x519e('0x3e','HxoX'))[0x0]['innerHTML']=_0x519e('0x3f','KF9X')+search[_0x2e96d2][_0x519e('0x40','lguM')]+_0x519e('0x41','yBhP');window[_0x519e('0x42','nXXO')](_0x28246a,'_blank');setTimeout(function(){delete_loading();},0x2bc);}else{document[_0x519e('0x43','UuT[')](_0x519e('0x44','GsK&'))[0x0][_0x519e('0x45','8RTq')]=_0x519e('0x46','k@#v');search_time_style=setInterval(function(){console_log(_0x519e('0x47','Fl%7'));if(window['innerWidth']>0x30c){document[_0x519e('0x43','UuT[')](_0x519e('0x48','Nlu$'))[0x0][_0x519e('0x49','OCAV')]['height']=window[_0x519e('0x4a','yBhP')]*0.9-0x3a+'px';document[_0x519e('0x4b','ntBL')](_0x519e('0x4c','qudT'))[0x0][_0x519e('0x4d','DO3X')][_0x519e('0x4e','FE[*')]=0x30c+'px';}else{document[_0x519e('0x4f','A5%v')]('iframe-box')[0x0][_0x519e('0x50','HxoX')][_0x519e('0x51','m9Cc')]=window[_0x519e('0x52','f9@m')]+0x50+'px';document[_0x519e('0x53','[0t$')](_0x519e('0x54','Fl%7'))[0x0][_0x519e('0x55','[0t$')]['width']=window[_0x519e('0x56','FE[*')]+'px';}},0x3e8);document[_0x519e('0x21','i7W3')](_0x519e('0x57','M3It'))[0x0]['setAttribute'](_0x519e('0x58','scJE'),_0x28246a);}show_loading();}(function(){document['getElementsByClassName'](_0x519e('0x59','LQ^Z'))[0x0][_0x519e('0x5a','DO3X')]('mouseover',function(_0x283b82){console_log('鼠标over了输入框，输入框自动聚焦');let _0x5779bd=this;_0x5779bd['focus']();});document['getElementById']('select')[_0x519e('0x5b','Cm)E')]=function(_0x143864){console_log(_0x519e('0x5c','NVI9'));let _0x4d2b82=this;set_search(_0x4d2b82[_0x519e('0x5d','M3It')]);};document['getElementById'](_0x519e('0x5e','8RTq'))[_0x519e('0x5f','RArU')]=function(_0x36304b){console_log(_0x519e('0x60','Fl%7'));document['getElementsByClassName'](_0x519e('0x61','HxoX'))[0x0][_0x519e('0x62','gZ[W')][_0x519e('0x63','A5%v')]('liner-color');dead_input(focus_time);};document[_0x519e('0x64','(9!j')]('input')[_0x519e('0x65',']3y#')]=function(_0x131eef){console_log(_0x519e('0x66','GsK&'));document[_0x519e('0x67','ukWl')](_0x519e('0x68','A#lU'))[0x0][_0x519e('0x69','RArU')][_0x519e('0x6a','m9Cc')](_0x519e('0x6b','KF9X'));dead_input(blur_time);};document[_0x519e('0x6c','A5%v')]=function(_0x5a5f59){console_log(_0x519e('0x6d','lguM'));let _0x2046f0=_0x5a5f59['key'];if(_0x2046f0==='Enter'){run_search();}};}(_0x519e('0x6e','FE[*')));const bg_cookie=search_cookie_pre+'bg_color';(function(){let _0x1067e9=getCookie(bg_cookie)*0x1;if(!_0x1067e9){setCookie(bg_cookie,0x0);}else{if(_0x1067e9===0x0){document[_0x519e('0x6f','M3It')](_0x519e('0x70','x(Mp'))['classList'][_0x519e('0x71','3S^E')]('bg-black');}else if(_0x1067e9===0x1){document[_0x519e('0x72','f9@m')](_0x519e('0x73','NVI9'))[_0x519e('0x74','ukWl')][_0x519e('0x75','Fl%7')]('bg-black');}}}());document[_0x519e('0x76','8RTq')]('body')[0x0][_0x519e('0x77','GsK&')](_0x519e('0x78','qudT'),function(){many_click(0x3,change_bgcolor);});function change_bgcolor(){if(document[_0x519e('0x79','oatr')](_0x519e('0x7a','oatr'))['classList']['contains'](_0x519e('0x7b','scJE'))){document[_0x519e('0x7c','LQ^Z')](_0x519e('0x7d','8RTq'))['classList'][_0x519e('0x7e','9uhr')](_0x519e('0x7f','OCAV'));setCookie(bg_cookie,0x0);}else{document['getElementById']('body')[_0x519e('0x80','yBhP')][_0x519e('0x81','DO3X')]('bg-black');setCookie(bg_cookie,0x1);}};encode_version = 'sojson.v4';
+    </script>
+    
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
